@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://ccvm5y6o3gwhp"]
+
+[ext_resource type="Texture2D" uid="uid://cf0rs6h5vwopi" path="res://assets/characters/Kael.png" id="1_psvb1"]
+[ext_resource type="Script" path="res://scripts/Player.cs" id="1_tn681"]
+[ext_resource type="PackedScene" uid="uid://barspnmmmemhq" path="res://scene/ClickableItem.tscn" id="2_lf2nx"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_64jvo"]
+radius = 286.0
+height = 770.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aykq3"]
+radius = 740.0
+height = 1480.0
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_tn681")
+ClickableItemScene = ExtResource("2_lf2nx")
+
+[node name="Kael" type="Sprite2D" parent="."]
+position = Vector2(3, -3)
+texture = ExtResource("1_psvb1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(25, 2)
+shape = SubResource("CapsuleShape2D_64jvo")
+
+[node name="HoverOverBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HoverOverBox"]
+shape = SubResource("CapsuleShape2D_aykq3")
+
+[connection signal="mouse_entered" from="HoverOverBox" to="." method="OnMouseEntered"]
+[connection signal="mouse_exited" from="HoverOverBox" to="." method="OnMouseExit"]

@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://barspnmmmemhq"]
+
+[ext_resource type="Script" path="res://scripts/ClickableItem.cs" id="1_4hy8t"]
+[ext_resource type="Texture2D" uid="uid://cn0y616cbhxi6" path="res://assets/skills/skillsPrefab.png" id="2_ur7pk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tal5i"]
+radius = 31.0161
+
+[node name="ClickableItem" type="Node2D"]
+z_index = 2
+script = ExtResource("1_4hy8t")
+
+[node name="SkillsPrefab" type="Sprite2D" parent="."]
+position = Vector2(-1, 0)
+texture = ExtResource("2_ur7pk")
+
+[node name="clickArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="clickArea"]
+shape = SubResource("CircleShape2D_tal5i")
+
+[node name="Button" type="Button" parent="clickArea"]
+offset_left = -21.0
+offset_top = -22.0
+offset_right = 21.0
+offset_bottom = 22.0
+flat = true
+
+[connection signal="mouse_entered" from="clickArea" to="." method="OnMouseEntered"]
+[connection signal="pressed" from="clickArea/Button" to="." method="OnButtonPressed"]
