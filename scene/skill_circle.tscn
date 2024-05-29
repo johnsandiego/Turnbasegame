@@ -1,0 +1,77 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmfnuupl3hgy3"]
+
+[sub_resource type="BitMap" id="BitMap_1kf10"]
+
+[node name="SkillCircle" type="Node2D"]
+
+[node name="Button" type="TextureButton" parent="."]
+offset_left = 13.0
+offset_top = -27.0
+offset_right = 21.0
+offset_bottom = -19.0
+texture_click_mask = SubResource("BitMap_1kf10")
+stretch_mode = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="Button2" type="TextureButton" parent="."]
+offset_left = 25.0
+offset_top = -14.0
+offset_right = 33.0
+offset_bottom = -6.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Button3" type="TextureButton" parent="."]
+offset_left = 27.0
+offset_top = 3.0
+offset_right = 35.0
+offset_bottom = 11.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Button4" type="TextureButton" parent="."]
+offset_left = 19.0
+offset_top = 19.0
+offset_right = 27.0
+offset_bottom = 27.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Button5" type="TextureButton" parent="."]
+offset_left = 4.0
+offset_top = 28.0
+offset_right = 12.0
+offset_bottom = 36.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Button6" type="TextureButton" parent="."]
+offset_left = -13.0
+offset_top = 28.0
+offset_right = -5.0
+offset_bottom = 36.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Button7" type="TextureButton" parent="."]
+offset_left = -29.0
+offset_top = 19.0
+offset_right = -21.0
+offset_bottom = 27.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Button8" type="TextureButton" parent="."]
+offset_left = -37.0
+offset_top = 4.0
+offset_right = -29.0
+offset_bottom = 12.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Button9" type="TextureButton" parent="."]
+offset_left = -37.0
+offset_top = -14.0
+offset_right = -29.0
+offset_bottom = -6.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Button10" type="TextureButton" parent="."]
+offset_left = -22.0
+offset_top = -27.0
+offset_right = -14.0
+offset_bottom = -19.0
+metadata/_edit_use_anchors_ = true
