@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcrvyc3y7l34t"]
+
+[ext_resource type="Script" path="res://TurnQueue.cs" id="1_nva73"]
+[ext_resource type="Texture2D" uid="uid://cwpuwta658f1g" path="res://icon.svg" id="2_k7f2s"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_nva73")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(67, 66)
+texture = ExtResource("2_k7f2s")
+
+[node name="Icon2" type="Sprite2D" parent="."]
+position = Vector2(67, 232)
+texture = ExtResource("2_k7f2s")
+
+[node name="Icon3" type="Sprite2D" parent="."]
+position = Vector2(66, 395)
+texture = ExtResource("2_k7f2s")
