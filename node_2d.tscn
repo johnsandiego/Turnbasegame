@@ -1,19 +1,59 @@
-[gd_scene load_steps=3 format=3 uid="uid://dcrvyc3y7l34t"]
+[gd_scene load_steps=4 format=3 uid="uid://dcrvyc3y7l34t"]
 
 [ext_resource type="Script" path="res://TurnQueue.cs" id="1_nva73"]
 [ext_resource type="Texture2D" uid="uid://cwpuwta658f1g" path="res://icon.svg" id="2_k7f2s"]
+[ext_resource type="Script" path="res://scripts/BaseBattlers.cs" id="3_jiq7x"]
 
-[node name="Node2D" type="Node2D"]
+[node name="TurnQueue" type="Node2D" node_paths=PackedStringArray("battler1", "battler2", "battler3")]
 script = ExtResource("1_nva73")
+battler1 = NodePath("Icon")
+battler2 = NodePath("Icon2")
+battler3 = NodePath("Icon3")
 
 [node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(67, 66)
+position = Vector2(85, 102)
 texture = ExtResource("2_k7f2s")
+script = ExtResource("3_jiq7x")
+Id = "1"
+Speed = 3
+Strength = 3
+Health = 10
+Stamina = 10
+Energy = 5
+Defense = 2
 
 [node name="Icon2" type="Sprite2D" parent="."]
-position = Vector2(67, 232)
+position = Vector2(1069, 116)
 texture = ExtResource("2_k7f2s")
+script = ExtResource("3_jiq7x")
+Id = "2"
+Speed = 2
+Strength = 2
+Health = 6
+Stamina = 4
+Energy = 4
+Defense = 2
 
 [node name="Icon3" type="Sprite2D" parent="."]
-position = Vector2(66, 395)
+position = Vector2(564, 103)
 texture = ExtResource("2_k7f2s")
+script = ExtResource("3_jiq7x")
+Id = "3"
+Speed = 1
+Strength = 9
+Health = 10
+Stamina = 10
+Energy = 10
+Defense = 5
+
+[node name="Enemy" type="Sprite2D" parent="."]
+position = Vector2(562, 541)
+texture = ExtResource("2_k7f2s")
+script = ExtResource("3_jiq7x")
+Id = "3"
+Speed = 1
+Strength = 9
+Health = 10
+Stamina = 10
+Energy = 10
+Defense = 5
