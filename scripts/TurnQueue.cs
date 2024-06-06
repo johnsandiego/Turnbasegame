@@ -29,7 +29,7 @@ public partial class TurnQueue : Node2D
     {
         clickableItem.PerformedAction += OnSkillClicked;
         InitializeBattlers();
-        SetupTimer();
+        //SetupTimer();
         //currentBattler = GetNextBattler();
 
         //currentBattler.Modulate = new Color(1, 1, 0, 1);

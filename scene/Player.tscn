@@ -12,8 +12,9 @@ height = 770.0
 radius = 740.0
 height = 1480.0
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="CharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("skillListContainer")]
 script = ExtResource("1_tn681")
+skillListContainer = NodePath("SkillContainer")
 ClickableItemScene = ExtResource("2_lf2nx")
 
 [node name="Kael" type="Sprite2D" parent="."]
@@ -29,68 +30,79 @@ shape = SubResource("CapsuleShape2D_64jvo")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HoverOverBox"]
 shape = SubResource("CapsuleShape2D_aykq3")
 
-[node name="ClickableItem" parent="." instance=ExtResource("2_lf2nx")]
+[node name="SkillContainer" type="Node2D" parent="."]
+
+[node name="ClickableItem" parent="SkillContainer" instance=ExtResource("2_lf2nx")]
 visible = false
 position = Vector2(223, -547)
 scale = Vector2(2, 2)
 
-[node name="ClickableItem2" parent="." node_paths=PackedStringArray("skillImage") instance=ExtResource("2_lf2nx")]
+[node name="ClickableItem2" parent="SkillContainer" node_paths=PackedStringArray("skillImage") instance=ExtResource("2_lf2nx")]
 visible = false
 position = Vector2(424, -309)
 scale = Vector2(2, 2)
 skillImage = NodePath("../ClickableItem/SkillsPrefab")
+skillPosition = 1
 
-[node name="ClickableItem3" parent="." node_paths=PackedStringArray("skillImage") instance=ExtResource("2_lf2nx")]
+[node name="ClickableItem3" parent="SkillContainer" node_paths=PackedStringArray("skillImage") instance=ExtResource("2_lf2nx")]
 visible = false
 position = Vector2(538, 2)
 scale = Vector2(2, 2)
 skillImage = NodePath("../ClickableItem/SkillsPrefab")
+skillPosition = 2
 
-[node name="ClickableItem4" parent="." node_paths=PackedStringArray("skillImage") instance=ExtResource("2_lf2nx")]
+[node name="ClickableItem4" parent="SkillContainer" node_paths=PackedStringArray("skillImage") instance=ExtResource("2_lf2nx")]
 visible = false
 position = Vector2(442, 325)
 scale = Vector2(2, 2)
 skillImage = NodePath("../ClickableItem/SkillsPrefab")
+skillPosition = 3
 
-[node name="ClickableItem5" parent="." node_paths=PackedStringArray("skillImage") instance=ExtResource("2_lf2nx")]
+[node name="ClickableItem5" parent="SkillContainer" node_paths=PackedStringArray("skillImage") instance=ExtResource("2_lf2nx")]
 visible = false
 position = Vector2(199, 537)
 scale = Vector2(2, 2)
 skillImage = NodePath("../ClickableItem/SkillsPrefab")
+skillPosition = 4
 
-[node name="ClickableItem6" parent="." node_paths=PackedStringArray("skillImage") instance=ExtResource("2_lf2nx")]
+[node name="ClickableItem6" parent="SkillContainer" node_paths=PackedStringArray("skillImage") instance=ExtResource("2_lf2nx")]
 visible = false
 position = Vector2(-224, 531)
 scale = Vector2(2, 2)
 skillImage = NodePath("../ClickableItem/SkillsPrefab")
+skillPosition = 5
 
-[node name="ClickableItem7" parent="." node_paths=PackedStringArray("skillImage") instance=ExtResource("2_lf2nx")]
+[node name="ClickableItem7" parent="SkillContainer" node_paths=PackedStringArray("skillImage") instance=ExtResource("2_lf2nx")]
 visible = false
 position = Vector2(-475, 298)
 rotation = 0.785397
 scale = Vector2(2, 2)
 skillImage = NodePath("../ClickableItem/SkillsPrefab")
+skillPosition = 6
 
-[node name="ClickableItem8" parent="." node_paths=PackedStringArray("skillImage") instance=ExtResource("2_lf2nx")]
+[node name="ClickableItem8" parent="SkillContainer" node_paths=PackedStringArray("skillImage") instance=ExtResource("2_lf2nx")]
 visible = false
 position = Vector2(-542, 2.00002)
 rotation = 0.785397
 scale = Vector2(2, 2)
 skillImage = NodePath("../ClickableItem/SkillsPrefab")
+skillPosition = 7
 
-[node name="ClickableItem9" parent="." node_paths=PackedStringArray("skillImage") instance=ExtResource("2_lf2nx")]
+[node name="ClickableItem9" parent="SkillContainer" node_paths=PackedStringArray("skillImage") instance=ExtResource("2_lf2nx")]
 visible = false
 position = Vector2(-447, -294)
 rotation = 0.785397
 scale = Vector2(2, 2)
 skillImage = NodePath("../ClickableItem/SkillsPrefab")
+skillPosition = 8
 
-[node name="ClickableItem10" parent="." node_paths=PackedStringArray("skillImage") instance=ExtResource("2_lf2nx")]
+[node name="ClickableItem10" parent="SkillContainer" node_paths=PackedStringArray("skillImage") instance=ExtResource("2_lf2nx")]
 visible = false
 position = Vector2(-187, -536)
 rotation = 0.785397
 scale = Vector2(2, 2)
 skillImage = NodePath("../ClickableItem/SkillsPrefab")
+skillPosition = 9
 
 [connection signal="mouse_entered" from="HoverOverBox" to="." method="OnMouseEntered"]
 [connection signal="mouse_exited" from="HoverOverBox" to="." method="OnMouseExit"]

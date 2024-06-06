@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://c0qkjpyduovhm"]
 
-[ext_resource type="Script" path="res://Enemy.cs" id="1_bx8io"]
+[ext_resource type="Script" path="res://scripts/Enemy.cs" id="1_bx8io"]
 [ext_resource type="PackedScene" uid="uid://barspnmmmemhq" path="res://scene/ClickableItem.tscn" id="2_bi80e"]
 [ext_resource type="Texture2D" uid="uid://dt4lcimyusob8" path="res://assets/enemies/Goblin.png" id="2_xn14e"]
 
@@ -12,9 +12,10 @@ height = 770.0
 radius = 740.0
 height = 1480.0
 
-[node name="Enemy" type="CharacterBody2D"]
+[node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("skillListContainer")]
 script = ExtResource("1_bx8io")
 ClickableItemScene = ExtResource("2_bi80e")
+skillListContainer = NodePath("SkillContainer")
 
 [node name="Goblin" type="Sprite2D" parent="."]
 position = Vector2(3, -3)
@@ -29,6 +30,76 @@ shape = SubResource("CapsuleShape2D_jnk1a")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HoverOverBox"]
 position = Vector2(46, 71)
 shape = SubResource("CapsuleShape2D_am8qd")
+
+[node name="SkillContainer" type="Node2D" parent="."]
+
+[node name="ClickableItem" parent="SkillContainer" instance=ExtResource("2_bi80e")]
+visible = false
+position = Vector2(190, -513)
+scale = Vector2(2, 2)
+
+[node name="ClickableItem2" parent="SkillContainer" node_paths=PackedStringArray("skillImage") instance=ExtResource("2_bi80e")]
+visible = false
+position = Vector2(438, -281)
+scale = Vector2(2, 2)
+skillImage = NodePath("../ClickableItem/SkillsPrefab")
+skillPosition = 1
+
+[node name="ClickableItem3" parent="SkillContainer" node_paths=PackedStringArray("skillImage") instance=ExtResource("2_bi80e")]
+visible = false
+position = Vector2(499, -3)
+scale = Vector2(2, 2)
+skillImage = NodePath("../ClickableItem/SkillsPrefab")
+skillPosition = 2
+
+[node name="ClickableItem4" parent="SkillContainer" node_paths=PackedStringArray("skillImage") instance=ExtResource("2_bi80e")]
+visible = false
+position = Vector2(464, 304)
+scale = Vector2(2, 2)
+skillImage = NodePath("../ClickableItem/SkillsPrefab")
+skillPosition = 3
+
+[node name="ClickableItem5" parent="SkillContainer" node_paths=PackedStringArray("skillImage") instance=ExtResource("2_bi80e")]
+visible = false
+position = Vector2(269, 566)
+scale = Vector2(2, 2)
+skillImage = NodePath("../ClickableItem/SkillsPrefab")
+skillPosition = 4
+
+[node name="ClickableItem6" parent="SkillContainer" node_paths=PackedStringArray("skillImage") instance=ExtResource("2_bi80e")]
+visible = false
+position = Vector2(-209, 558)
+scale = Vector2(2, 2)
+skillImage = NodePath("../ClickableItem/SkillsPrefab")
+skillPosition = 5
+
+[node name="ClickableItem7" parent="SkillContainer" node_paths=PackedStringArray("skillImage") instance=ExtResource("2_bi80e")]
+visible = false
+position = Vector2(-436, 302)
+scale = Vector2(2, 2)
+skillImage = NodePath("../ClickableItem/SkillsPrefab")
+skillPosition = 6
+
+[node name="ClickableItem8" parent="SkillContainer" node_paths=PackedStringArray("skillImage") instance=ExtResource("2_bi80e")]
+visible = false
+position = Vector2(-519, 19)
+scale = Vector2(2, 2)
+skillImage = NodePath("../ClickableItem/SkillsPrefab")
+skillPosition = 7
+
+[node name="ClickableItem9" parent="SkillContainer" node_paths=PackedStringArray("skillImage") instance=ExtResource("2_bi80e")]
+visible = false
+position = Vector2(-412, -283)
+scale = Vector2(2, 2)
+skillImage = NodePath("../ClickableItem/SkillsPrefab")
+skillPosition = 8
+
+[node name="ClickableItem10" parent="SkillContainer" node_paths=PackedStringArray("skillImage") instance=ExtResource("2_bi80e")]
+visible = false
+position = Vector2(-177, -499)
+scale = Vector2(2, 2)
+skillImage = NodePath("../ClickableItem/SkillsPrefab")
+skillPosition = 9
 
 [connection signal="mouse_entered" from="HoverOverBox" to="." method="OnMouseEntered"]
 [connection signal="mouse_exited" from="HoverOverBox" to="." method="OnMouseExit"]
