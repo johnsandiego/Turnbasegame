@@ -2,41 +2,58 @@ using Godot;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using static Godot.Projection;
 
 public partial class TurnQueue : Node2D
 {
-    private Dictionary<string, BaseBattlers> currentBattlers;
+
+    private Dictionary<string, Player> currentBattlers;
     private Timer timer;
-    private BaseBattlers currentBattler;
+    private Player currentBattler;
     private Vector2 previousPosition;
     private float _t = 0.0f;
 
-    [Export] public BaseBattlers battler1;
-    [Export] public BaseBattlers battler2;
-    [Export] public BaseBattlers battler3;
-    [Export] public BaseBattlers enemy;
+    [Export] public Player battler1;
+    [Export] public Player battler2;
+    [Export] public Player battler3;
+    [Export] public Enemy enemy;
     public bool movingToEnemy;
-    public IEnumerable<BaseBattlers> Battlers => currentBattlers.Values;
+    public IEnumerable<Player> Battlers => currentBattlers.Values;
     public bool TurnOver { get; private set; } = false;
     [Export] public float amplitude = 50.0f;
     [Export] public float frequency = 1.0f;
+    public bool playerHasSelectedAnAction;
+    [Export]
+    public ClickableItem clickableItem;
     public override void _Ready()
     {
+        clickableItem.PerformedAction += OnSkillClicked;
         InitializeBattlers();
         SetupTimer();
-        currentBattler = GetNextBattler();
-        previousPosition = currentBattler.Position;
+        //currentBattler = GetNextBattler();
 
-        currentBattler.Modulate = new Color(1, 1, 0, 1);
-        currentBattler.Position = currentBattler.Position.Lerp(previousPosition, 0.4f);
+        //currentBattler.Modulate = new Color(1, 1, 0, 1);
+        //currentBattler.Position = currentBattler.Position.Lerp(previousPosition, 0.4f);
         //StartNextTurn(1);
+        movingToEnemy = true;
+    }
+
+    private void OnSkillClicked()
+    {
+        playerHasSelectedAnAction = true;
+        GD.Print("skill has been clicked");
     }
 
     public override void _PhysicsProcess(double delta)
     {
-        if (movingToEnemy)
+        if (movingToEnemy && playerHasSelectedAnAction)
         {
-            MovePlayerInFrontOfEnemy(currentBattler, enemy, (float)delta);
+            currentBattler = GetNextBattler();
+            if (currentBattler != null)
+            {
+                previousPosition = currentBattler.Position;
+                MovePlayerInFrontOfEnemy(currentBattler, enemy, (float)delta);
+            }
         } else
         {
             MovePlayerBack(currentBattler, previousPosition, (float)delta);
@@ -73,8 +90,8 @@ public partial class TurnQueue : Node2D
     private void InitializeBattlers()
     {
         var global = GetNode<Global>("/root/GlobalVariables");
-        var baseBattlers = new List<BaseBattlers> { battler1, battler2, battler3 };
-        global.SetBattlers(baseBattlers);
+        var Player = new List<Player> { battler1, battler2, battler3 };
+        global.SetBattlers(Player);
         currentBattlers = global.GetBattlers();
     }
 
@@ -115,23 +132,23 @@ public partial class TurnQueue : Node2D
         currentBattler.Modulate = new Color(1, 1, 1, 1);
     }
 
-    private BaseBattlers GetNextBattler()
+    private Player GetNextBattler()
     {
         return Battlers.OrderBy(b => b.Id).FirstOrDefault(b => !b.TurnOver);
     }
 
-    private void PlayTurn(BaseBattlers battler, float delta)
+    private void PlayTurn(Player battler, float delta)
     {
         MovePlayerInFrontOfEnemy(battler, enemy, delta);
     }
 
-    private void MovePlayerInFrontOfEnemy(BaseBattlers playerBattler, BaseBattlers enemyPosition, float delta)
+    private void MovePlayerInFrontOfEnemy(Player playerBattler, Enemy enemyPosition, float delta)
     {
         if (playerBattler != null)
         {
             float sineWave = Mathf.Sin(delta++ * frequency) * amplitude;
             Vector2 sineOffset = new Vector2(0, sineWave);
-            Vector2 targetPosition = enemy.Position - new Vector2(150, 150) + sineOffset;
+            Vector2 targetPosition = enemy.Position  + sineOffset;
             playerBattler.Position = playerBattler.Position.Lerp(targetPosition, (float).1 * delta);
             //playerBattler.Position = playerBattler.Position.Lerp(enemyPosition.Position - new Vector2(100, 100), 1 * delta);
 
@@ -139,11 +156,13 @@ public partial class TurnQueue : Node2D
             if (playerBattler.Position.DistanceTo(targetPosition) < 1.0f)
             {
                 movingToEnemy = false;
+                playerBattler.SetTurnOver(true);
+                playerHasSelectedAnAction = false;
             }
         }
     }
 
-    private void MovePlayerBack(BaseBattlers playerBattler, Vector2 previousPosition, float delta)
+    private void MovePlayerBack(Player playerBattler, Vector2 previousPosition, float delta)
     {
         if (playerBattler != null)
         {

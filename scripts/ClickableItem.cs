@@ -11,6 +11,8 @@ public partial class ClickableItem : Node2D
     public CompressedTexture2D texture2;
     [Export]
     public CompressedTexture2D texture3;
+    [Signal]
+    public delegate void PerformedActionEventHandler();
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
@@ -43,5 +45,7 @@ public partial class ClickableItem : Node2D
     private void OnButtonPressed()
     {
         GD.Print("pressed on skill");
+        EmitSignal(SignalName.PerformedAction);
+
     }
 }

@@ -15,46 +15,18 @@ enemy = NodePath("Enemy")
 position = Vector2(85, 102)
 texture = ExtResource("2_k7f2s")
 script = ExtResource("3_jiq7x")
-Id = "1"
-Speed = 3
-Strength = 3
-Health = 10
-Stamina = 10
-Energy = 5
-Defense = 2
 
 [node name="Icon2" type="Sprite2D" parent="."]
 position = Vector2(1069, 116)
 texture = ExtResource("2_k7f2s")
 script = ExtResource("3_jiq7x")
-Id = "2"
-Speed = 2
-Strength = 2
-Health = 6
-Stamina = 4
-Energy = 4
-Defense = 2
 
 [node name="Icon3" type="Sprite2D" parent="."]
 position = Vector2(564, 103)
 texture = ExtResource("2_k7f2s")
 script = ExtResource("3_jiq7x")
-Id = "3"
-Speed = 1
-Strength = 9
-Health = 10
-Stamina = 10
-Energy = 10
-Defense = 5
 
 [node name="Enemy" type="Sprite2D" parent="."]
 position = Vector2(562, 541)
 texture = ExtResource("2_k7f2s")
 script = ExtResource("3_jiq7x")
-Id = "3"
-Speed = 1
-Strength = 9
-Health = 10
-Stamina = 10
-Energy = 10
-Defense = 5

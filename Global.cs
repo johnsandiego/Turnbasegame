@@ -4,10 +4,10 @@ using System.Collections.Generic;
 
 public partial class Global : Node
 {
-	public Dictionary<string, BaseBattlers> Battlers = new Dictionary<string, BaseBattlers>();
-	public void SetBattlers(List<BaseBattlers> list)
+	public Dictionary<string, Player> Battlers = new Dictionary<string, Player>();
+	public void SetBattlers(List<Player> list)
 	{
-		foreach(BaseBattlers b in list)
+		foreach(Player b in list)
         {
             if (!Battlers.ContainsKey(b.GetId()))
 			{
@@ -16,7 +16,7 @@ public partial class Global : Node
         }
     }
 
-	public Dictionary<string, BaseBattlers> GetBattlers()
+	public Dictionary<string, Player> GetBattlers()
 	{
 		return Battlers;
 	}
