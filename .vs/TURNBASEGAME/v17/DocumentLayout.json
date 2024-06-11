@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\John\\Documents\\GitHub\\Turnbasegame\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FFE9F31F-E4DE-43F4-A2CB-FC38351BF4D4}|TurnBaseGame.csproj|c:\\users\\john\\documents\\github\\turnbasegame\\scripts\\turnqueue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FFE9F31F-E4DE-43F4-A2CB-FC38351BF4D4}|TurnBaseGame.csproj|solutionrelative:scripts\\turnqueue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{FFE9F31F-E4DE-43F4-A2CB-FC38351BF4D4}|TurnBaseGame.csproj|c:\\users\\john\\documents\\github\\turnbasegame\\scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FFE9F31F-E4DE-43F4-A2CB-FC38351BF4D4}|TurnBaseGame.csproj|solutionrelative:scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFE9F31F-E4DE-43F4-A2CB-FC38351BF4D4}|TurnBaseGame.csproj|c:\\users\\john\\documents\\github\\turnbasegame\\scripts\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FFE9F31F-E4DE-43F4-A2CB-FC38351BF4D4}|TurnBaseGame.csproj|solutionrelative:scripts\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFE9F31F-E4DE-43F4-A2CB-FC38351BF4D4}|TurnBaseGame.csproj|c:\\users\\john\\documents\\github\\turnbasegame\\scripts\\turnqueue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FFE9F31F-E4DE-43F4-A2CB-FC38351BF4D4}|TurnBaseGame.csproj|solutionrelative:scripts\\turnqueue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FFE9F31F-E4DE-43F4-A2CB-FC38351BF4D4}|TurnBaseGame.csproj|c:\\users\\john\\documents\\github\\turnbasegame\\scripts\\usesskills.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -17,10 +21,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{FFE9F31F-E4DE-43F4-A2CB-FC38351BF4D4}|TurnBaseGame.csproj|c:\\users\\john\\documents\\github\\turnbasegame\\scripts\\clickableitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FFE9F31F-E4DE-43F4-A2CB-FC38351BF4D4}|TurnBaseGame.csproj|solutionrelative:scripts\\clickableitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FFE9F31F-E4DE-43F4-A2CB-FC38351BF4D4}|TurnBaseGame.csproj|c:\\users\\john\\documents\\github\\turnbasegame\\scripts\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FFE9F31F-E4DE-43F4-A2CB-FC38351BF4D4}|TurnBaseGame.csproj|solutionrelative:scripts\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FFE9F31F-E4DE-43F4-A2CB-FC38351BF4D4}|TurnBaseGame.csproj|c:\\users\\john\\documents\\github\\turnbasegame\\scripts\\basebattlers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -34,11 +34,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "TurnQueue.cs",
               "DocumentMoniker": "C:\\Users\\John\\Documents\\GitHub\\Turnbasegame\\scripts\\TurnQueue.cs",
               "RelativeDocumentMoniker": "scripts\\TurnQueue.cs",
@@ -61,12 +61,11 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-06T01:13:07.766Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "UsesSkills.cs",
               "DocumentMoniker": "C:\\Users\\John\\Documents\\GitHub\\Turnbasegame\\scripts\\UsesSkills.cs",
               "RelativeDocumentMoniker": "scripts\\UsesSkills.cs",
@@ -75,18 +74,17 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-06T01:13:07.784Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Player.cs",
               "DocumentMoniker": "C:\\Users\\John\\Documents\\GitHub\\Turnbasegame\\scripts\\Player.cs",
               "RelativeDocumentMoniker": "scripts\\Player.cs",
               "ToolTip": "C:\\Users\\John\\Documents\\GitHub\\Turnbasegame\\scripts\\Player.cs",
               "RelativeToolTip": "scripts\\Player.cs",
-              "ViewState": "AQIAAGkAAAAAAAAAAAAmwKQAAAAhAAAA",
+              "ViewState": "AQIAABkAAAAAAAAAAAAwwB8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-06T01:13:07.789Z",
               "IsPinned": true,
@@ -94,7 +92,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "ClickableItem.cs",
               "DocumentMoniker": "C:\\Users\\John\\Documents\\GitHub\\Turnbasegame\\scripts\\ClickableItem.cs",
               "RelativeDocumentMoniker": "scripts\\ClickableItem.cs",
@@ -103,18 +101,17 @@
               "ViewState": "AQIAABEAAAAAAAAAAAAYwA4AAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-06T01:13:07.795Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "Enemy.cs",
               "DocumentMoniker": "C:\\Users\\John\\Documents\\GitHub\\Turnbasegame\\scripts\\Enemy.cs",
               "RelativeDocumentMoniker": "scripts\\Enemy.cs",
               "ToolTip": "C:\\Users\\John\\Documents\\GitHub\\Turnbasegame\\scripts\\Enemy.cs",
               "RelativeToolTip": "scripts\\Enemy.cs",
-              "ViewState": "AQIAADMAAAAAAAAAAAAswD4AAAAHAAAA",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAAwA8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-06T02:20:53.765Z",
               "IsPinned": true,

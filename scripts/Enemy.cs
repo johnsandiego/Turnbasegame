@@ -12,6 +12,8 @@ public partial class Enemy : UsesSkills
     public Node2D skillListContainer;
 
     public Dictionary<int, ClickableItem> clickableItems = new Dictionary<int, ClickableItem>();
+    public int NumberOfSkillsUnlock = 3;
+
     public void GenerateClickableItems()
     {
         for (int i = 1; i <= NumberOfItems; i++)
@@ -59,8 +61,12 @@ public partial class Enemy : UsesSkills
 
 	private void OnMouseEntered()
 	{
-       // GenerateClickableItems();
-       
+        // GenerateClickableItems();
+        for (var i = 0; i < NumberOfSkillsUnlock; i++)
+        {
+            clickableItems.TryGetValue(i, out ClickableItem value);
+            value.Visible = true;
+        }
     }
 
     private void OnMouseExit()
